@@ -21,16 +21,17 @@ const displayTotalSearch = (results) => {
   const div = document.createElement("div");
   if (results == 0) {
     div.innerHTML = `
-        <h1 class="text-center mt-5 text-secondary">!!!Result Not Found Try Again!!!</h1>
+        <h1 class="text-center mt-5 text-warning">!-! Result Not Found Try Again !-!</h1>
         `;
   } else {
     div.innerHTML = `
-    <h4 class="text-center my-5">Total Result Found = ${results}</h4>
+    <h4 class="text-center my-5">Total Result Found :  ${results}</h4>
     `;
   }
   totalSearchResult.appendChild(div);
 };
 
+// Show Result in website
 const displayResult = (docs) => {
   const searchResult = document.getElementById("search-result");
 
@@ -45,11 +46,11 @@ const displayResult = (docs) => {
           }-M.jpg" class="card-img-top" alt="..." />
                <div class="card-body">
                    <h5 class="card-title">Book Name: ${doc.title}</h5>
-                   <h6>Author Name : ${doc.author_name}</h6>
-                   <p class="card-text"> First Publisher:${
+                   <h6>Author Name :  ${doc.author_name}</h6>
+                   <p class="card-text"> First Publisher: ${
                      doc.first_publish_year
                        ? doc.first_publish_year
-                       : "! Not Found !"
+                       : " ! Not Found !"
                    }
                      <p class="card-text"> Publisher: 
                          ${doc.publisher}
